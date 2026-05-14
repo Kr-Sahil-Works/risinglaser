@@ -1,0 +1,163 @@
+:root {
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+
+  --color-background: #040505;
+  --color-background-secondary: #08110d;
+  --color-background-tertiary: #0b1813;
+
+  /* =========================
+     GLASS SURFACES
+  ========================= */
+
+  --color-surface: rgba(10, 20, 16, 0.58);
+  --color-surface-light: rgba(255, 255, 255, 0.04);
+
+  --color-surface-hover: rgba(255, 255, 255, 0.06);
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --color-text-primary: #f5f7f6;
+
+  --color-text-secondary: #b6beb9;
+
+  --color-text-muted: #7d8782;
+
+  /* =========================
+     BRAND GREENS
+  ========================= */
+
+  --color-green-primary: #006a4e;
+
+  --color-green-secondary: #008f69;
+
+  --color-green-light: #00c78c;
+
+  --color-green-hover: #18d69b;
+
+  --color-green-soft: #7fe7c3;
+
+  /* =========================
+     GOLD
+  ========================= */
+
+  --color-gold-primary: #d4af37;
+
+  --color-gold-soft: #e7c96a;
+
+  /* =========================
+     SPECIAL EFFECTS
+  ========================= */
+
+  --color-glow-green: rgba(0, 199, 140, 0.32);
+
+  --color-shadow-dark: rgba(0, 0, 0, 0.35);
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0, 106, 78, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(212, 175, 55, 0.04),
+      transparent 24%
+    ),
+    var(--color-background);
+
+  color: var(--color-text-primary);
+
+  overflow-x: hidden;
+
+  font-family: Inter, sans-serif;
+
+  text-rendering: optimizeLegibility;
+
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.glass-surface {
+  background: var(--color-surface);
+
+  backdrop-filter: blur(12px) saturate(140%);
+
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+
+  border: 1px solid var(--color-border);
+}
+
+.glass-surface-hover {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.glass-surface-hover:hover {
+  background: var(--color-surface-hover);
+
+  border-color: var(--color-border-strong);
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+::selection {
+  background: var(--color-green-primary);
+  color: white;
+}
+
+body,
+button,
+a {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
