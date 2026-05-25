@@ -4,6 +4,8 @@ import Button from "../../ui/Button";
 
 import Reveal from "../../components/ui/Reveal";
 
+import { Link } from "react-router-dom";
+
 export default function HeroContent() {
   return (
     <div className="max-w-2xl">
@@ -149,8 +151,8 @@ export default function HeroContent() {
     Explore Services
   </motion.a>
 
-  <motion.a
-    href="#contact"
+ <Link to="/quote">
+  <motion.div
     whileHover={{
       y: -2,
     }}
@@ -192,7 +194,8 @@ export default function HeroContent() {
     }}
   >
     Get Quote
-  </motion.a>
+  </motion.div>
+</Link>
 </div>
       </Reveal>
     </div>

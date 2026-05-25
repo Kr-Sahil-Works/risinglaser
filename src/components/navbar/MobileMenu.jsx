@@ -1,11 +1,23 @@
 import { AnimatePresence, motion } from "framer-motion";
 
 import Container from "../../ui/Container";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
+
 
 export default function MobileMenu({
   isOpen,
   navLinks,
 }) {
+
+  const location = useLocation();
+
+const isQuotePage =
+  location.pathname === "/quote";
+
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -154,37 +166,32 @@ export default function MobileMenu({
                   solutions engineered for modern
                   manufacturing.
                 </p>
+{!isQuotePage && (
+              <Link to="/quote">
+  <button
+    className="
+      mt-5
+      w-full
+      rounded-2xl
+      px-5
+      py-3
+      text-sm
+      font-semibold
+      transition
+      duration-300
+    "
+    style={{
+      background:
+        "var(--color-green-primary)",
 
-                <button
-                  className="
-                    mt-5
-                    w-full
-                    rounded-2xl
-                    px-5
-                    py-3
-                    text-sm
-                    font-semibold
-                    transition
-                    duration-300
-                  "
-                  style={{
-                    background:
-                      "var(--color-green-primary)",
-
-                    color:
-                      "var(--color-text-primary)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background =
-                      "var(--color-green-secondary)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background =
-                      "var(--color-green-primary)";
-                  }}
-                >
-                  Get Quote
-                </button>
+      color:
+        "var(--color-text-primary)",
+    }}
+  >
+    Get Quote
+  </button>
+</Link>
+)}
               </motion.div>
             </div>
           </Container>

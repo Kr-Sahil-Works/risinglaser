@@ -6,7 +6,32 @@ export default function CursorGlow() {
     y: 0,
   });
 
+  const [isMobile, setIsMobile] =
+    useState(false);
+
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener(
+      "resize",
+      checkMobile
+    );
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        checkMobile
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     let frame;
 
     const moveCursor = (e) => {
@@ -34,7 +59,9 @@ export default function CursorGlow() {
 
       cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <div

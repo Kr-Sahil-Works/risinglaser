@@ -1,4 +1,4 @@
-# ⚡ RisingLaser — Premium Industrial Laser Cutting Website
+# ⚡ RisingLasers — Premium Industrial Laser Cutting Website
 
 <div align="center">
 
@@ -14,7 +14,7 @@ Developed by **Krsahil**
 
 # ✨ Overview
 
-RisingLaser is a premium modern industrial website designed for laser cutting, fabrication, engineering, and manufacturing businesses.
+RisingLasers is a premium modern industrial website designed for laser cutting, fabrication, engineering, and manufacturing businesses.
 
 The project focuses on:
 
@@ -330,4 +330,4 @@ dist
 
 # 📜 License
 
-© RisingLaser — All Rights Reserved.
+© RisingLasers — All Rights Reserved.

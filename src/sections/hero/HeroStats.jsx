@@ -2,7 +2,7 @@ import Reveal from "../../components/ui/Reveal";
 
 const stats = [
   {
-    value: "15+",
+    value: "7+",
     label: "Years Experience",
   },
 

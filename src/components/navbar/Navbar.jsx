@@ -1,38 +1,67 @@
 import { useState } from "react";
 import Container from "../../ui/Container";
 import LaserLogo from "./LaserLogo";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 
-
-const navLinks = [
-  {
-    label: "Home",
-    href: "#home",
-  },
-
-  {
-    label: "Services",
-    href: "#services",
-  },
-
-  {
-    label: "Gallery",
-    href: "#gallery",
-  },
-
-  {
-    label: "Industries",
-    href: "#industries",
-  },
-
-  {
-    label: "Contact",
-    href: "#contact",
-  },
-];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+const isQuotePage =
+  location.pathname === "/quote";
+
+  
+const navLinks = isQuotePage
+  ? [
+      {
+        label: "Home",
+        href: "#home",
+      },
+
+      {
+        label: "Services",
+        href: "#services",
+      },
+
+      {
+        label: "Industries",
+        href: "#industries",
+      },
+    ]
+  : [
+      {
+        label: "Home",
+        href: "#home",
+      },
+
+      {
+        label: "Services",
+        href: "#services",
+      },
+
+      {
+        label: "Industries",
+        href: "#industries",
+      },
+
+      {
+        label: "Gallery",
+        href: "#gallery",
+      },
+
+      {
+        label: "Contact",
+        href: "#contact",
+      },
+    ];
+
+    
 
   return (
     <header
@@ -53,58 +82,61 @@ export default function Navbar() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a
-            href={"#home"}
-            className="flex items-center"
-          >
-            {/* Green Dot */}
-    <LaserLogo/>
-
-            {/* Logo Text */}
-            <div className="flex flex-col">
-        <span
-  className="
-    text-xl
-    font-black
-    leading-none
-    tracking-tight
-    sm:text-2xl
-  "
+     <Link
+  to="/"
+  className="flex items-center"
 >
-  <span
-    style={{
-      color: "var(--color-text-primary)",
-    }}
-  >
-    Rising
-  </span>
+  {/* Green Dot */}
+  <LaserLogo />
 
-  <span
-    style={{
-      marginLeft:2,
-      color: "var(--color-green-light)",
-    }}
-  >
-    Laser
-  </span>
-</span>
+  {/* Logo Text */}
+  <div className="flex flex-col">
+    <span
+      className="
+        text-xl
+        font-black
+        leading-none
+        tracking-tight
+        sm:text-2xl
+      "
+    >
+      <span
+        style={{
+          color:
+            "var(--color-text-primary)",
+        }}
+      >
+        Rising
+      </span>
 
-              <span
-                className="
-                  mt-1
-                  text-[9px]
-                  font-medium
-                  uppercase
-                  tracking-[0.38em]
-                "
-                style={{
-                  color: "var(--color-gold-primary)",
-                }}
-              >
-                Trust Quality
-              </span>
-            </div>
-          </a>
+      <span
+        style={{
+          marginLeft: 2,
+          color:
+            "var(--color-green-light)",
+        }}
+      >
+        Lasers
+      </span>
+    </span>
+
+    <span
+      className="
+        mt-1
+        text-[9px]
+        font-medium
+        uppercase
+        tracking-[0.38em]
+      "
+      style={{
+        color:
+          "var(--color-gold-primary)",
+      }}
+    >
+      Trust Quality
+    </span>
+  </div>
+</Link>
 
           {/* Desktop Nav */}
      <div className="hidden md:flex md:ml-auto">
@@ -112,7 +144,11 @@ export default function Navbar() {
     {navLinks.map((link) => (
       <a
         key={link.label}
-        href={link.href}
+        href={
+  location.pathname === "/"
+    ? link.href
+    : `/${link.href}`
+}
         className="
           group
           relative
@@ -162,36 +198,40 @@ export default function Navbar() {
   </nav>
 </div>
           {/* Desktop Button */}
-          <div className="hidden md:flex md:ml-10">
-            <button
-              className="
-                rounded-2xl
-                px-5
-                py-2
-                text-sm
-                font-semibold
-                transition
-                duration-300
-              "
-              style={{
-                background:
-                  "var(--color-green-primary)",
+          {!isQuotePage && (
+  <div className="hidden md:flex md:ml-10">
+         <Link to="/quote">
+  <button
+    className="
+      rounded-2xl
+      px-5
+      py-2
+      text-sm
+      font-semibold
+      transition
+      duration-300
+    "
+    style={{
+      background:
+        "var(--color-green-primary)",
 
-                color:
-                  "var(--color-text-primary)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background =
-                  "var(--color-green-secondary)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background =
-                  "var(--color-green-primary)";
-              }}
-            >
-              Get Quote
-            </button>
+      color:
+        "var(--color-text-primary)",
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.background =
+        "var(--color-green-secondary)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.background =
+        "var(--color-green-primary)";
+    }}
+  >
+    Get Quote
+  </button>
+</Link>
           </div>
+)}
 
           {/* Mobile Toggle */}
           <button
@@ -263,7 +303,11 @@ export default function Navbar() {
               {navLinks.map((link) => (
              <a
   key={link.label}
-  href={link.href}
+  href={
+  location.pathname === "/"
+    ? link.href
+    : `/${link.href}`
+}
   onClick={() => setMenuOpen(false)}
 
                 className="
@@ -287,8 +331,9 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-
-              <button
+{!isQuotePage && (
+          <Link to="/quote">
+  <button
                 className="
                   mt-2
                   rounded-2xl
@@ -306,7 +351,9 @@ export default function Navbar() {
                 }}
               >
                 Get Quote
-              </button>
+        </button>
+</Link>
+)}
             </div>
           </Container>
         </div>

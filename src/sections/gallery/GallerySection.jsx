@@ -2,12 +2,12 @@ import Container from "../../ui/Container";
 import SectionHeading from "../../ui/SectionHeading";
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
-  "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
-  "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3",
-  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
+  "/gcardspics/g1.jpg",
+  "/gcardspics/g2.jpg",
+  "/gcardspics/g3.jpg",
+  "/gcardspics/g4.jpg",
+  "/gcardspics/g5.jpg",
+  "/gcardspics/g6.jpg",
 ];
 
 export default function GallerySection() {

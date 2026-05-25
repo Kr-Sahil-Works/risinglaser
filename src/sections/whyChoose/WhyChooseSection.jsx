@@ -40,7 +40,7 @@ export default function WhyChooseSection() {
     <section className="overflow-hidden py-24">
       <Container>
         <SectionHeading
-          title="Why Choose RisingLaser"
+          title="Why Choose RisingLasers"
           description="Premium industrial engineering combined with modern precision manufacturing."
         />
 

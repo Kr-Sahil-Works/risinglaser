@@ -5,6 +5,8 @@ import {
   Layers3,
   ShieldCheck,
   Wrench,
+  SprayCan,
+  Cable,
 } from "lucide-react";
 
 import Container from "../../ui/Container";
@@ -55,6 +57,19 @@ const services = [
     desc:
       "Reliable industrial support and maintenance services for businesses.",
   },
+
+  {
+icon: <SprayCan size={34} />,
+  title: "Powder Coating",
+  desc:
+    "High-quality powder coating services with durable and smooth finishing.",
+},
+{
+  icon: <Cable size={34} />,
+  title: "Metal Bending",
+  desc:
+    "Precision metal bending solutions for industrial and custom fabrication needs.",
+},
 ];
 
 export default function ServicesSection() {
@@ -125,7 +140,7 @@ export default function ServicesSection() {
                   "var(--color-text-secondary)",
               }}
             >
-              RisingLaser delivers precision
+              RisingLasers delivers precision
               laser cutting, fabrication,
               and engineering solutions
               for modern industries.

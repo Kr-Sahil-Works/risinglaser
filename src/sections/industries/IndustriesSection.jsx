@@ -11,11 +11,6 @@ const industries = [
   },
 
   {
-    title: "Precision Components",
-    image: "/gallery/precision-components.jpg",
-  },
-
-  {
     title: "Architectural Panels",
     image: "/gallery/architecture.jpg",
   },
@@ -34,6 +29,10 @@ const industries = [
     title: "Laser Sheet Processing",
     image: "/gallery/sheets.jpg",
   },
+  {
+  title: "Industrial Laser Work",
+  image: "/gallery/laser-cutting.jpg",
+},
 ];
 
 export default function IndustriesSection() {
@@ -105,7 +104,7 @@ export default function IndustriesSection() {
                   "var(--color-text-secondary)",
               }}
             >
-              RisingLaser delivers precision
+              RisingLasers delivers precision
               fabrication and laser cutting
               solutions for industrial,
               architectural, and engineering
