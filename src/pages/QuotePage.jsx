@@ -243,7 +243,7 @@ RisingLasers Website
 `;
 
   setTimeout(() => {
-    const whatsappUrl = `https://wa.me/919586000429?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/919590812350?text=${encodeURIComponent(
       message
     )}`;
 
@@ -258,7 +258,7 @@ if (isMobile) {
 
   setTimeout(() => {
     window.location.href =
-      `sms:+919586000429?body=${encodeURIComponent(
+      `sms:+919590812350?body=${encodeURIComponent(
         message
       )}`;
   }, 2500);
@@ -754,7 +754,7 @@ setLoading(false);
                     <Info
                       icon={<Phone />}
                       title="Call Us"
-                      text="+91 9586000429"
+                      text="+91 9590812350"
                     />
 
                     <Info

@@ -78,7 +78,7 @@ export default function CTASection() {
             className="
               absolute
               top-0
-              h-[2px]
+              h-0.5
               w-44
             "
             style={{
