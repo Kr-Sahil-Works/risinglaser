@@ -7,11 +7,6 @@ const stats = [
   },
 
   {
-    value: "500+",
-    label: "Industrial Projects",
-  },
-
-  {
     value: "99%",
     label: "Precision Accuracy",
   },
